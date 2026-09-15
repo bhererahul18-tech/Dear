@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Birthday Surprise 🎁</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at center,#252525 0,#090909 70%);
+  font-family:Arial,sans-serif;color:white;
+}
+.scene{position:relative;text-align:center;width:100%;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hint{font-size:18px;margin-bottom:25px;animation:pulse 1.5s infinite;transition:.3s}
+.gift{position:relative;width:180px;height:145px;cursor:pointer;transition:.5s;z-index:5}
+.box{position:absolute;left:10px;bottom:0;width:160px;height:105px;background:#151515;border:2px solid #d9a62e;border-radius:5px;box-shadow:0 15px 35px #000}
+.box:before{content:"";position:absolute;left:65px;top:0;width:28px;height:100%;background:#d9a62e}
+.lid{position:absolute;left:0;top:12px;width:180px;height:42px;background:#1d1d1d;border:2px solid #e2b13a;border-radius:5px;z-index:3;transform-origin:10% 100%;transition:1s}
+.lid:before{content:"";position:absolute;left:74px;top:-2px;width:28px;height:42px;background:#d9a62e}
+.bow{position:absolute;top:-10px;left:62px;z-index:4;font-size:45px}
+.gift.open .lid{transform:rotate(-25deg) translate(-20px,-45px)}
+.gift.open{transform:translateY(15px)}
+.gift.hidden{opacity:0;transform:scale(.7);pointer-events:none}
+.glow{position:absolute;left:35px;top:25px;width:110px;height:90px;background:#ffd45a;filter:blur(25px);opacity:0;transition:1s}
+.gift.open .glow{opacity:1}
+.reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;
+opacity:0;pointer-events:none;transform:scale(.4);transition:1s;z-index:10}
+.reveal.show{opacity:1;transform:scale(1)}
+h1{font-size:clamp(45px,13vw,85px);margin:10px 20px;
+background:linear-gradient(90deg,#fff,#ffd35c,#fff);-webkit-background-clip:text;color:transparent;
+text-shadow:0 0 25px rgba(255,207,70,.35)}
+.cake{font-size:65px}.small{font-size:19px;margin-top:8px}
+.firework{position:fixed;top:42%;width:12px;height:12px;border-radius:50%;opacity:0;z-index:8;pointer-events:none}
+.firework.left{left:12%}.firework.right{right:12%}
+.firework.burst{animation:skyshot 1.7s ease-out forwards}
+.spark{position:absolute;width:5px;height:22px;border-radius:4px;transform-origin:50% 100%;background:#fff;box-shadow:0 0 10px #fff}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.65}}
+@keyframes skyshot{
+  0%{opacity:0;transform:translateY(180px) scale(.2)}
+  35%{opacity:1;transform:translateY(-40px) scale(1)}
+  100%{opacity:0;transform:translateY(-40px) scale(1)}
+}
+.confetti{position:fixed;top:-20px;width:10px;height:18px;opacity:0;z-index:20}
+.confetti.fly{animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:1}}
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="hint" id="hint">👆 Tap the gift to open</div>
+  <div class="gift" id="gift" aria-label="Tap once to open">
+    <div class="glow"></div><div class="box"></div><div class="lid"></div><div class="bow">🎀</div>
+  </div>
+
+  <div class="firework left" id="fwLeft"></div>
+  <div class="firework right" id="fwRight"></div>
+
+  <div class="reveal" id="reveal">
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday! 🎉</h1>
+    <div class="small">✨ Wishing you an amazing day! ✨</div>
+  </div>
+</div>
+
+<script>
+const gift=document.getElementById('gift');
+const reveal=document.getElementById('reveal');
+const hint=document.getElementById('hint');
+
+function makeFirework(el){
+  el.innerHTML='';
+  for(let i=0;i<28;i++){
+    const s=document.createElement('span');
+    s.className='spark';
+    const a=(i/28)*Math.PI*2;
+    const r=65+Math.random()*45;
+    s.style.left='3px';
+    s.style.top='3px';
+    s.style.transform=`rotate(${a}rad) translateY(-${r}px)`;
+    s.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    s.style.boxShadow='0 0 10px currentColor';
+    el.appendChild(s);
+  }
+}
+
+gift.addEventListener('click',()=>{
+  // Only the first tap can trigger the opening.
+  if(gift.classList.contains('open')) return;
+  gift.classList.add('open');
+  hint.style.opacity='0';
+  setTimeout(()=>{
+    gift.classList.add('hidden');
+    reveal.classList.add('show');
+    makeFirework(document.getElementById('fwLeft'));
+    makeFirework(document.getElementById('fwRight'));
+    document.getElementById('fwLeft').classList.add('burst');
+    document.getElementById('fwRight').classList.add('burst');
+    burst();
+  },1000);
+});
+
+function burst(){
+  for(let i=0;i<90;i++){
+    const c=document.createElement('div');
+    c.className='confetti fly';
+    c.style.left=Math.random()*100+'vw';
+    c.style.background=`hsl(${Math.random()*360},90%,60%)`;
+    c.style.animationDelay=Math.random()*.5+'s';
+    c.style.transform=`rotate(${Math.random()*360}deg)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3500);
+  }
+}
+</script>
+</body>
+</html>

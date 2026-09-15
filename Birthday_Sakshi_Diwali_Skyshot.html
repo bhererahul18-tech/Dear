@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#050014">
+<title>Happy Birthday Sakshi 🎁</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#050014;color:#fff;font-family:Georgia,"Times New Roman",serif}
+.scene{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 50% 48%,rgba(110,45,180,.35),transparent 28%),linear-gradient(180deg,#030018,#09002b 48%,#16002f)}
+.stars,.stars:before,.stars:after{position:absolute;inset:0;content:"";pointer-events:none;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px),radial-gradient(circle,#ffe6a8 0 1px,transparent 1.5px);background-size:83px 91px,127px 113px;background-position:12px 21px,49px 72px;opacity:.65}
+.stars:before{transform:translate(31px,43px);opacity:.35}.stars:after{transform:translate(-22px,8px);opacity:.25}
+.moon{position:absolute;top:5%;left:50%;width:52px;height:52px;border-radius:50%;background:#fff4cf;box-shadow:0 0 35px #fff0aa;opacity:.85}.moon:after{content:"";position:absolute;left:17px;top:-4px;width:52px;height:52px;border-radius:50%;background:#080022}
+.screen{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity .7s,transform .7s}.hidden{opacity:0!important;pointer-events:none;transform:scale(.96)}
+.tap-text{font-size:clamp(22px,5vw,38px);font-weight:bold;color:#ffe9b0;text-shadow:0 0 14px #ffb84d;margin:0 0 5px}.tap-icon{font-size:32px}
+.hint{font-size:14px;color:#f2cfff;opacity:.85;margin-top:18px}
+.gift{position:relative;width:180px;height:150px;border:0;background:none;cursor:pointer;filter:drop-shadow(0 0 25px rgba(255,92,40,.75));animation:float 2.3s ease-in-out infinite}
+.box{position:absolute;left:15px;right:15px;bottom:4px;height:98px;border-radius:5px 5px 13px 13px;background:linear-gradient(90deg,#3b0711,#8e1423 48%,#36050e);border:2px solid #ffb02e;box-shadow:inset 0 0 25px #ff4d1a,0 0 15px #ff7c2b}
+.lid{position:absolute;left:4px;right:4px;top:28px;height:38px;border-radius:7px;background:linear-gradient(#791323,#bd2731 48%,#650b19);border:2px solid #ffc04a;z-index:3}
+.ribbon{position:absolute;background:linear-gradient(90deg,#ffd25a,#fff1a2,#ffb21c);box-shadow:0 0 9px #ffbd3d}.vertical{left:50%;transform:translateX(-50%);width:23px;top:0;bottom:0}.horizontal{left:0;right:0;top:36px;height:16px}
+.bow{position:absolute;width:48px;height:27px;border:8px solid #ffcf45;background:#a91425;border-radius:50% 50% 40% 50%;top:-23px}.bow-left{left:45px;transform:rotate(-28deg)}.bow-right{right:45px;transform:rotate(28deg)}
+.knot{position:absolute;width:20px;height:20px;border-radius:50%;background:#ffd85d;left:50%;top:-11px;transform:translateX(-50%);box-shadow:0 0 12px #ffd85d}
+.gift:active{transform:scale(.93)}@keyframes float{50%{transform:translateY(-8px)}}
+.birthday-screen{justify-content:center}.birthday-screen h1{margin:8px 0 0;font-size:clamp(42px,10vw,78px);line-height:.95;font-family:"Brush Script MT","Segoe Script",cursive;background:linear-gradient(90deg,#ffd86b,#ff8bd8,#8ee7ff,#ffd86b);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(255,111,204,.75))}
+.birthday-screen h2{margin:3px 0 16px;font-size:clamp(50px,13vw,90px);font-family:"Brush Script MT","Segoe Script",cursive;color:#76e7ff;text-shadow:0 0 8px #4bd9ff,0 0 25px #b65cff}.birthday-screen h2 span{color:#ff70c8;font-size:.65em}
+.cake{position:relative;width:125px;height:98px;filter:drop-shadow(0 0 16px #ffd45c)}.cake-body{position:absolute;left:12px;right:12px;bottom:3px;height:58px;border-radius:12px 12px 18px 18px;background:linear-gradient(#fff0f6,#ff9fc8);border:3px solid #fff;box-shadow:inset 0 -10px 0 #ff72b4}.cake-body:before{content:"";position:absolute;left:-3px;right:-3px;top:-9px;height:23px;border-radius:50%;background:#fff9fd;border:3px solid #fff}.cake-body span{position:relative;top:14px;display:block;margin:0;color:#ff4cae;font-size:13px;font-weight:bold;letter-spacing:1px}.cake-top{position:absolute;left:20px;right:20px;top:23px;height:15px;border-radius:50%;background:#fff7fc;z-index:2}.candle{position:absolute;z-index:4;left:50%;top:1px;transform:translateX(-50%);height:30px;width:9px;background:repeating-linear-gradient(45deg,#69e8ff 0 5px,#fff 5px 9px);border-radius:3px}.flame{position:absolute;z-index:5;left:50%;top:-13px;transform:translateX(-50%) rotate(45deg);width:16px;height:16px;background:#ffd75a;border-radius:2px 10px 2px 10px;box-shadow:0 0 18px #ff9d00}
+.burst{font-size:34px;animation:pulse 1.2s infinite alternate}@keyframes pulse{to{transform:scale(1.3) rotate(12deg);filter:drop-shadow(0 0 12px #fff)}}
+.quote-card{width:min(90vw,650px);min-height:105px;padding:18px 24px 13px;border:1px solid rgba(255,255,255,.3);border-radius:22px;background:rgba(15,0,38,.55);backdrop-filter:blur(8px);box-shadow:0 0 25px rgba(181,76,255,.3)}.quote-mark{font-size:34px;color:#ffd45f;line-height:20px}
+#quote{font-family:"Trebuchet MS",Arial,sans-serif;font-size:clamp(16px,3.9vw,22px);line-height:1.4;margin:2px auto 9px;color:#fff7ff;text-shadow:0 0 7px rgba(255,170,240,.45);transition:opacity .35s,transform .35s}#quote.fade{opacity:0;transform:translateY(6px)}
+.quote-dots{display:flex;justify-content:center;gap:7px}.quote-dots i{width:7px;height:7px;border-radius:50%;background:#6f6280}.quote-dots i.active{background:#ffd45f;box-shadow:0 0 9px #ffd45f}.footer-hearts{margin-top:15px;color:#ff8fd6;letter-spacing:5px;font-size:15px}
+.fireworks{position:absolute;z-index:2;width:145px;height:145px;border-radius:50%;opacity:.9}.fireworks:before,.fireworks:after{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 0deg,transparent 0 7deg,#ffd05a 7.5deg 9deg,transparent 9.5deg 15deg);-webkit-mask:radial-gradient(circle,transparent 0 18%,#000 19% 21%,transparent 22% 28%,#000 29% 31%,transparent 32% 39%,#000 40% 42%,transparent 43%);mask:radial-gradient(circle,transparent 0 18%,#000 19% 21%,transparent 22% 28%,#000 29% 31%,transparent 32% 39%,#000 40% 42%,transparent 43%);animation:fire 2.8s infinite ease-out}.fireworks:after{transform:rotate(22deg);background:repeating-conic-gradient(from 0deg,transparent 0 7deg,#ff5bd1 7.5deg 9deg,transparent 9.5deg 15deg)}.fireworks.left{left:1%;top:15%}.fireworks.right{right:1%;top:18%;transform:scale(1.25)}
+.fireworks.top{left:43%;top:4%;transform:scale(.7)}@keyframes fire{0%,100%{transform:scale(.45);opacity:.15}40%{transform:scale(1);opacity:1}70%{transform:scale(.82);opacity:.6}}
+#confetti{position:absolute;inset:0;z-index:10;pointer-events:none;overflow:hidden}.confetti-piece{position:absolute;top:-20px;width:8px;height:14px;border-radius:2px;animation:fall linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.95}}
+@media(max-height:700px){.birthday-screen{transform:scale(.82)}.birthday-screen.hidden{transform:scale(.78)}.tap-text{font-size:22px}.gift{transform:scale(.85)}}@media(max-width:380px){.quote-card{padding:14px 15px}.birthday-screen h1{font-size:39px}.birthday-screen h2{font-size:55px}}
+
+
+.up-fireworks{position:absolute;z-index:3;inset:0;pointer-events:none;overflow:hidden}
+.firework{position:absolute;bottom:-25px;width:4px;height:4px;border-radius:50%;
+background:#fff;box-shadow:0 0 7px #fff,0 0 14px #ffd45f;animation:launchBurst 3.2s linear infinite}
+.firework:before{content:"";position:absolute;width:2px;height:70px;left:1px;bottom:0;
+background:linear-gradient(to top,transparent,rgba(255,255,255,.9));filter:blur(1px)}
+.f1{left:9%;animation-delay:0s}.f2{left:23%;animation-delay:1.1s}
+.f3{left:77%;animation-delay:.55s}.f4{left:91%;animation-delay:1.7s}
+
+@keyframes launchBurst{
+0%{transform:translate(0,0) scale(1);opacity:0}
+5%{opacity:1}
+48%{transform:translate(0,-58vh) scale(1);opacity:1}
+50%{transform:translate(0,-58vh) scale(0);opacity:0}
+51%{transform:translate(0,-58vh) scale(.2);opacity:1}
+58%{transform:translate(0,-58vh) scale(1.7);opacity:.95}
+68%{transform:translate(0,-58vh) scale(2.5);opacity:.55}
+82%{transform:translate(0,-58vh) scale(3);opacity:.15}
+100%{transform:translate(0,-58vh) scale(3.3);opacity:0}
+}
+.burst-up{position:absolute;width:130px;height:130px;border-radius:50%;opacity:0;
+background:repeating-conic-gradient(from 0deg,transparent 0 6deg,#ffd05a 6.5deg 8deg,transparent 8.5deg 13deg);
+-webkit-mask:radial-gradient(circle,transparent 0 8%,#000 9% 12%,transparent 13% 20%,#000 21% 24%,transparent 25% 33%,#000 34% 37%,transparent 38%);
+mask:radial-gradient(circle,transparent 0 8%,#000 9% 12%,transparent 13% 20%,#000 21% 24%,transparent 25% 33%,#000 34% 37%,transparent 38%);
+animation:burstFlash 3.2s linear infinite}
+.burst-up:after{content:"";position:absolute;inset:0;border-radius:50%;
+background:repeating-conic-gradient(from 18deg,transparent 0 6deg,#ff5bd1 6.5deg 8deg,transparent 8.5deg 13deg);
+-webkit-mask:inherit;mask:inherit}
+.bu1{left:2%;top:9%;animation-delay:.05s}.bu2{right:2%;top:18%;animation-delay:.6s}
+@keyframes burstFlash{
+0%,49%{transform:scale(.05);opacity:0}
+50%{transform:scale(.15);opacity:0}
+52%{transform:scale(.7);opacity:1}
+57%{transform:scale(1.15);opacity:1}
+66%{transform:scale(1.5);opacity:.55}
+82%{transform:scale(1.8);opacity:.1}
+100%{transform:scale(2);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="scene">
+<div class="stars"></div><div id="upFireworks" class="up-fireworks hidden"><div class="firework f1"></div><div class="firework f2"></div><div class="firework f3"></div><div class="firework f4"></div><div class="burst-up bu1"></div><div class="burst-up bu2"></div></div>
+<div class="fireworks left"></div><div class="fireworks right"></div><div class="fireworks top"></div>
+
+<section id="opening" class="screen">
+<p class="tap-text"><br>Tap to open</p>
+<button id="giftButton" class="gift" aria-label="Open birthday gift">
+<span class="lid"><span class="ribbon vertical"></span><span class="bow bow-left"></span><span class="bow bow-right"></span><span class="knot"></span></span>
+<span class="box"><span class="ribbon vertical"></span><span class="ribbon horizontal"></span></span>
+</button>
+<p class="hint">A little surprise is waiting for you ✨</p>
+</section>
+
+<section id="birthday" class="screen hidden">
+<div class="cake"><div class="flame"></div><div class="candle"></div><div class="cake-top"></div><div class="cake-body"><span>Happy</span><span>Birthday</span></div></div>
+<h1>Happy Birthday</h1><h2>Sakshi</h2>
+<div class="quote-card"><div class="quote-mark">“</div><p id="quote"></p><div class="quote-dots" id="quoteDots"></div></div>
+<div class="footer-hearts">♥ &nbsp; ✦ &nbsp; ♥ &nbsp; ✦ &nbsp; ♥</div>
+</section>
+<div id="confetti"></div>
+</div>
+
+<script>
+const gift=document.getElementById("giftButton"),opening=document.getElementById("opening"),birthday=document.getElementById("birthday"),quote=document.getElementById("quote"),dots=document.getElementById("quoteDots"),confetti=document.getElementById("confetti");
+const quotes=[
+"May your dreams be bigger than your fears, and your smile brighter than the stars. ✨",
+"You are not just a year older — you are a year more amazing. 💖",
+"Keep being the beautiful soul that makes the world brighter. 🌸",
+"Life is better with you in it. Keep smiling and shining! 🌟",
+"May happiness, success and love always find their way to you. 💕",
+"Never forget how special you are. You are magic, always! 👑"
+];
+let index=0,opened=false;
+quotes.forEach((q,i)=>{let d=document.createElement("i");if(!i)d.className="active";dots.appendChild(d)});
+function showQuote(i){
+ quote.classList.add("fade");
+ setTimeout(()=>{index=i;quote.textContent=quotes[i];[...dots.children].forEach((d,n)=>d.classList.toggle("active",n===i));quote.classList.remove("fade")},350)
+}
+function makeConfetti(){
+ const s=["✦","•","◆","♥","★"],c=["#ffd45f","#ff70c8","#72e8ff","#b88cff","#ffffff"];
+ for(let i=0;i<85;i++){let e=document.createElement("span");e.className="confetti-piece";e.textContent=s[Math.floor(Math.random()*s.length)];e.style.left=Math.random()*100+"%";e.style.fontSize=8+Math.random()*13+"px";e.style.animationDuration=2.8+Math.random()*3.5+"s";e.style.animationDelay=Math.random()+ "s";e.style.color=c[Math.floor(Math.random()*c.length)];confetti.appendChild(e);setTimeout(()=>e.remove(),7000)}
+}
+gift.addEventListener("click",()=>{
+ if(opened)return;opened=true;
+ gift.animate([{transform:"scale(1)"},{transform:"scale(1.12)"},{transform:"scale(.2) rotate(18deg)",opacity:0}],{duration:850,easing:"cubic-bezier(.2,.8,.2,1)"});
+ setTimeout(()=>{opening.classList.add("hidden");birthday.classList.remove("hidden");document.getElementById("upFireworks").classList.remove("hidden");quote.textContent=quotes[0];makeConfetti();setInterval(()=>showQuote((index+1)%quotes.length),3000)},650);
+});
+</script>
+</body>
+</html>
